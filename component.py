@@ -1,7 +1,6 @@
 import requests
 import unittest
 
-
 movie_url = 'http://localhost:8000'
 get_movies_url = f'{movie_url}/get_movies'
 get_movie_by_id_url = f'{movie_url}/get_movie_by_id'

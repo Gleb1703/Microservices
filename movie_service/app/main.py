@@ -27,8 +27,8 @@ db_dependency = Annotated[Session, Depends(get_db)]
 
 KEYCLOAK_URL = "http://keycloak:8080/"
 KEYCLOAK_CLIENT_ID = "test"
-KEYCLOAK_REALM = "myRealm"
-KEYCLOAK_CLIENT_SECRET = "zXkxCT1zhllUO1t6KqPC8qREQKklFNMM"
+KEYCLOAK_REALM = "test"
+KEYCLOAK_CLIENT_SECRET = "ZMCmwO1QwvOkhRXayXMWA2l32u9FAXCT"
 
 user_token = ""
 keycloak_openid = KeycloakOpenID(server_url=KEYCLOAK_URL,
@@ -61,7 +61,7 @@ def user_got_role():
     try:
         userinfo = keycloak_openid.userinfo(token["access_token"])
         token_info = keycloak_openid.introspect(token["access_token"])
-        if "myRole" not in token_info["realm_access"]["roles"]:
+        if "test" not in token_info["realm_access"]["roles"]:
             raise HTTPException(status_code=403, detail="Access denied")
         return token_info
     except Exception as e:

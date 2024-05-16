@@ -28,7 +28,6 @@ test_movie = {
 }
 
 
-
 class TestComponent(unittest.TestCase):
 
     def test_1_add_movie(self):

@@ -13,7 +13,6 @@ services:
     ports:
       - "5432:5432"
 
-
   movie_service:
     restart: on-failure
     container_name: movie_service
